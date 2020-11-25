@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pizzacorner.css">
+  <title>Pizza Corner</title>
+</head>
+
+<body bgcolor="black">
+  <button class="button-cart button3">Cart [0]</button>
+  <h1> &nbsp; &nbsp; Pizza Corner</h1>
+  <ul>
+    <li><a href="pizzacorner.html">HOME</a></li>
+    <li><a href="starters.html">STARTERS</a></li>
+    <li><a href="pizza.html">PIZZA</a></li>
+    <li><a href="desserts.html">DESSERTS</a></li> 
+    <li><a href="deals.html">DEALS</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">MORE</a>
+      <div class="dropdown-content">
+        <a href="pasta.html">PASTA</a>
+        <a href="sandwiches.html">SANDWICHES</a>
+        <a href="rice.html">RICE</a>
+        <a href="beverages.html">BEVERAGES</a>
+      </div>
+    </li>
+  </ul>
+
+  <a href="#" class="button-signin">CREATE AN ACCOUNT</a>
+  <a href="#" class="button-signin">SIGN IN</a>
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="images/slideshow/1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="images/slideshow/2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="images/slideshow/3.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) 
+        {
+           slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+    }
+    </script>
+</body>
+</html>
